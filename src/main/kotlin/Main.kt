@@ -1,17 +1,25 @@
 fun main() {
+    var age: Int
 
-    var myAge: Int = 22  // 32 bit, (-2.5млрд; +2,5млрд)
-    var myShort: Short = 2 // 16 bit
-    var myLong: Long = 25838383 // 64 bit
-    var myNull: Int? = null // null
+    age = 76
 
-    var myString: String = "Hello, world!"
-    var myChar: Char = 'a'
+    if (age >= 21) {
+        if (age > 75) {
+            println("You're old")
+        } else {
+            println("You are more 21")
+        }
+    } else if (age in 20 .. 18 ) {
+        println("You are more 18 and less 21")
+    } else {
+        println("Permission denied")
+    }
 
-    var myFloat: Float = 2.533f
-    var myDouble:  Double = 2.33333545 // хранит после запятой в 2 раза больше чисел, чем float
-
-    var myBoolean: Boolean = true
+    when (age) {
+        18 -> {println("18")}
+        21 -> {println("21")}
+        else -> {println("I Dont Know")}
+    }
 
 }
 
