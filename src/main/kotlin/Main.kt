@@ -1,25 +1,21 @@
 fun main() {
-    var age: Int
+    var isDownloaded = true
 
-    age = 76
+    // 1. While
+//    while (!isDownloaded) {
+//        println("File is downloading")
+//    }
 
-    if (age >= 21) {
-        if (age > 75) {
-            println("You're old")
-        } else {
-            println("You are more 21")
-        }
-    } else if (age in 20 .. 18 ) {
-        println("You are more 18 and less 21")
-    } else {
-        println("Permission denied")
+    // 2. Do ... While - условие выполнится минимум 1 раз
+//    do {
+//        println("File is downloading")
+//    } while (!isDownloaded)
+
+    // 3. For
+    for (i in 100 downTo 10 step 2) {
+        println("File is downloading $i time")
     }
-
-    when (age) {
-        18 -> {println("18")}
-        21 -> {println("21")}
-        else -> {println("I Dont Know")}
-    }
+    println("Finished")
 
 }
 
