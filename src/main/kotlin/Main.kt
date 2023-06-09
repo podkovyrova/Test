@@ -1,36 +1,62 @@
 fun main() {
-    var list: Array<Int>  = arrayOf(11, 12, 13, 14, 15)
-    var names = arrayOf("Kate", "Mary", "Chloe")
+    var s = "Hello world"
+    // Первый элемент строки
+    println(s[0])
+    println(s.first())
+    // Последний элемент строки
+    println(s[s.length-1])
+    println(s.last())
 
-//    println(list[0])
-//    println(names[0])
-//
-//    names[0] = "Catherine"
-//    println(names[0])
+    // функции startsWith и endsWith
+    var cardNumber = "4377 7236 7334 8839"
+    println(cardNumber.startsWith("4377"))
+    println(cardNumber.endsWith("8839"))
 
-    // Обращение к массивам через get и set
-//    println(names.get(1))
-//    names.set(1, "Bob")
-//    println(names.get(1))
+    var a = "Hello"
+    // Свойства заключаются в {}
+    println("The length of $a is ${a.length}")
 
-    // size - размер массива
-//    println(list.size)
+    // capitalize(), decapitalize(), toUpperCase(), toLowerCase()
 
-    // Перебор массивов
-//    for (i in names) {
-//        println(i)
-//    }
+//    val name = "John"
 
-    // forEachIndexed - index + element
-    list.forEachIndexed() { index, element ->
-        println("$element has index $index")
+//    val newName = name.capitalize()
+//    val newName = name.decapitalize()
+//    val newName = name.toUpperCase()
+//    val newName = name.toLowerCase()
+
+    // Функции is Empty, isBlank
+//    val emptyName = "\n"
+//    val emptyName = "  "
+//    println(emptyName.isBlank())
+//    println(emptyName.isEmpty())
+
+    // Функции, удаляющие пробелы trimStart() и trimEnd() и trim()
+    val name = " John "
+//    val newName = name.trimStart().trimEnd()
+    val newName = name.trim()
+    println(newName)
+
+    // Функции replace() и split()
+    val string = "Today today morning evening today"
+
+    val newString = string.toLowerCase().replace("today", "*****")
+    println(newString)
+
+    val list = "milk,bread,oranges,kiwi"
+    val arr = list.split(",")
+    println(arr)
+
+
+    // Ввод данных пользователем
+    println("Enter your name")
+    val input = readLine()
+    println("Hello, $input")
+
+    if (input?.toLowerCase()?.capitalize() == "John") {
+        println("Access denied")
+    } else {
+        println("Welcome")
     }
-
-    // forEachIndexed - only element
-    names.forEach { currentElement ->
-        if (currentElement == "Kate") {
-            print("Hello, ")
-        }
-        println(currentElement) }
     }
 
