@@ -1,21 +1,36 @@
 fun main() {
-    var isDownloaded = true
+    var list: Array<Int>  = arrayOf(11, 12, 13, 14, 15)
+    var names = arrayOf("Kate", "Mary", "Chloe")
 
-    // 1. While
-//    while (!isDownloaded) {
-//        println("File is downloading")
+//    println(list[0])
+//    println(names[0])
+//
+//    names[0] = "Catherine"
+//    println(names[0])
+
+    // Обращение к массивам через get и set
+//    println(names.get(1))
+//    names.set(1, "Bob")
+//    println(names.get(1))
+
+    // size - размер массива
+//    println(list.size)
+
+    // Перебор массивов
+//    for (i in names) {
+//        println(i)
 //    }
 
-    // 2. Do ... While - условие выполнится минимум 1 раз
-//    do {
-//        println("File is downloading")
-//    } while (!isDownloaded)
-
-    // 3. For
-    for (i in 100 downTo 10 step 2) {
-        println("File is downloading $i time")
+    // forEachIndexed - index + element
+    list.forEachIndexed() { index, element ->
+        println("$element has index $index")
     }
-    println("Finished")
 
-}
+    // forEachIndexed - only element
+    names.forEach { currentElement ->
+        if (currentElement == "Kate") {
+            print("Hello, ")
+        }
+        println(currentElement) }
+    }
 
