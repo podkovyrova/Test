@@ -6,4 +6,13 @@ abstract class Coffeeshop(val americanoPrice: Double, val cappuchinoPrice: Doubl
     abstract fun makeAmericano()
     abstract fun makeCappuchino()
     abstract fun makeLatte()
+
+    fun showStatistics() {
+        println("Americano sold: $americanoCount")
+        println("Cappuccino sold: $cappuchinoCount")
+        println("Latte sold: $latteCount")
+
+        val money = americanoCount * americanoPrice + cappuchinoCount * cappuchinoPrice + latteCount * lattePrice
+        println("Money earned: $money")
+    }
 }

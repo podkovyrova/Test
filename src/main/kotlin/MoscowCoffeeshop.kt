@@ -1,5 +1,5 @@
 class MoscowCoffeeshop(americanoPrice: Double, cappuchinoPrice: Double, lattePrice: Double):
-    Coffeeshop(americanoPrice, cappuchinoPrice, lattePrice) {
+    Coffeeshop(americanoPrice, cappuchinoPrice, lattePrice), Biscuits {
     override fun makeAmericano() {
         americanoCount++
         println("Thanks for order Americano in Moscow Coffee Shop")
@@ -15,4 +15,7 @@ class MoscowCoffeeshop(americanoPrice: Double, cappuchinoPrice: Double, lattePri
         println("Thanks for order Latte in Moscow Coffee Shop")
     }
 
+    override fun sellBiscuits() {
+        println("Take your biscuits")
+    }
 }

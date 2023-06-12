@@ -7,28 +7,61 @@ fun main() {
     val newYorkCoffeeshop = NewYorkCoffeeshop(5.0, 7.50, 8.0)
     var currentCoffeeshop: Coffeeshop
 
-    println("Hello! Choose a city")
-    println("1. Moscow\n2. New York")
+    while (true) {
+        println("Hello! Choose a city")
+        println("1. Moscow\n2. New York\n\n0. Exit")
 
-    currentCoffeeshop = when (readLine()) {
-        "1" -> moscowCoffeeshop
-        "2" -> newYorkCoffeeshop
+        currentCoffeeshop = when (readLine()) {
+            "1" -> moscowCoffeeshop
+            "2" -> newYorkCoffeeshop
+            "0" -> break
+            else -> {
+                println("Error")
+                continue
+            }
+        }
+
+        chooseDrink(currentCoffeeshop)
+    }
+}
+
+private fun chooseDrink(currentCoffeeshop: Coffeeshop) {
+    println("Choose a drink")
+    println("1. Americano\n2. Cappuchino\n3. Latte\n\n0. Show statistics")
+
+    when (readLine()) {
+        "1" -> {
+            currentCoffeeshop.makeAmericano()
+            checkAndAskForBuiscits(currentCoffeeshop)
+        }
+
+        "2" -> {
+            currentCoffeeshop.makeCappuchino()
+            checkAndAskForBuiscits(currentCoffeeshop)
+        }
+
+        "3" -> {
+            currentCoffeeshop.makeLatte()
+            checkAndAskForBuiscits(currentCoffeeshop)
+        }
+
+        "0" -> currentCoffeeshop.showStatistics()
         else -> {
             println("Error")
             exitProcess(1)
         }
     }
+}
 
-    println("Choose a drink")
-    println("1. Americano\n2. Cappuchino\n3. Latte")
+private fun checkAndAskForBuiscits(currentCoffeeshop: Coffeeshop) {
+    if (currentCoffeeshop is Biscuits) {
+        println("Would you like biscuits?")
+        println("1. Yes\n2. No")
 
-    when (readLine()) {
-        "1" -> currentCoffeeshop.makeAmericano()
-        "2" -> currentCoffeeshop.makeCappuchino()
-        "3" -> currentCoffeeshop.makeLatte()
-        else -> {
-            println("Error")
-            exitProcess(1)
+        val isBiscuits = readLine()
+
+        if (isBiscuits == "1") {
+            currentCoffeeshop.sellBiscuits()
         }
     }
 }
