@@ -1,12 +1,7 @@
 fun main() {
-    val bob = Dog("Bob", "Гав-гав")
-
-    bob.sleep()
-    bob.makeVoice()
-
-    val murzik = Cat("Murzik", "Meow!")
-
-    murzik.sleep()
-    murzik.makeVoice()
-
+    // public (позволяет иметь доступ откуда угодно)
+    // private (доступ только в месте объявления)
+    // protected (как и private + наследники)
+    val dog = Dog("Woof")
+    dog.info()
 }

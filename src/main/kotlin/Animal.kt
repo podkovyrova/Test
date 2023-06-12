@@ -1,9 +1,16 @@
-open class Animal(val name: String, val voice: String) {
+abstract class Animal(protected val voice: String) {
+    open val maxAge = 100
+
+    init {
+        println("Инициализация объекта")
+    }
     open fun sleep() {
-        println("$name is sleeping")
+        println("I am sleeping")
     }
 
-    open fun makeVoice() {
+    protected open fun makeVoice() {
         println(voice)
     }
+
+    abstract fun eat()
 }
