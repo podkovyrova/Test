@@ -1,32 +1,38 @@
-
-//fun myFunc(arr: Array<String>, count: Int) {
-//    for (i in arr) {
-//        when (i) {
-//            "Bob" -> println("Access denied $count times")
-//            "Peter" -> println("Welcome, Peter")
-//            else -> println("Who are you?")
-//        }
-//    }
-//}
-
 fun main() {
-//    val names = arrayOf("John", "Bob", "Peter")
-//    myFunc(names, 3)
-//
-//    if (readLine() == "Get all names") {
-//        myFunc(names, 5)
-//    }
-    var x = 2
-    var y = 3
+    println("hello! it's a calculator")
 
-    val result = add(x, y)
+    while(true) {
+        println("Enter a number")
 
-    println(result)
+        val first = readLine()?.toDoubleOrNull()
+
+        println("Enter one more number")
+
+        val second = readLine()?.toDoubleOrNull()
+
+        println("Enter an operator (+, -, *, /)")
+
+        val operator = readLine()
+
+        if (first == null || second == null || operator.isNullOrEmpty()) {
+            println("Lets try again")
+        } else {
+            var result = calculate(first, second, operator)
+
+            println("Result is $result")
+        }
+    }
+
 }
 
-fun add(x: Int, y: Int): Int {
-    return x + y
-}
+fun calculate(fir: Double, sec: Double, op: String): Double {
+    var res = 0.0
 
-// Сокращение однострочной функции
-// fun add(x: Int, y: Int): Int = x + y
+    when (op) {
+       "+" -> res = fir + sec
+        "-" -> res = fir - sec
+        "*" -> res = fir * sec
+        "/" -> res = fir / sec
+    }
+    return res
+}
