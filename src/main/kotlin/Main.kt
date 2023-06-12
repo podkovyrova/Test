@@ -1,16 +1,15 @@
 fun main() {
-    val answer = getAnswer("My question")
+    var house = Building()
+    println(house.floors)
 
-    println(answer?.toUpperCase())
-    // Если мы уверены, что null точно не будет - можно ставить "!!"
-//    println(answer!!.toUpperCase())
-}
 
-fun getAnswer(question: String): String? {
-    var answer: String? = null
+    var house1 = Building()
 
-    if (question.length < 10) {
-        answer = "This is your answer"
-    }
-    return answer
+    house1.floors = 3
+    house1.length = 7
+    house1.width = 7
+
+    println(house1.floors)
+
+    house1.destroy()
 }
