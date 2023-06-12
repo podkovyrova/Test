@@ -1,32 +1,16 @@
-
-//fun myFunc(arr: Array<String>, count: Int) {
-//    for (i in arr) {
-//        when (i) {
-//            "Bob" -> println("Access denied $count times")
-//            "Peter" -> println("Welcome, Peter")
-//            else -> println("Who are you?")
-//        }
-//    }
-//}
-
 fun main() {
-//    val names = arrayOf("John", "Bob", "Peter")
-//    myFunc(names, 3)
-//
-//    if (readLine() == "Get all names") {
-//        myFunc(names, 5)
-//    }
-    var x = 2
-    var y = 3
+    val answer = getAnswer("My question")
 
-    val result = add(x, y)
-
-    println(result)
+    println(answer?.toUpperCase())
+    // Если мы уверены, что null точно не будет - можно ставить "!!"
+//    println(answer!!.toUpperCase())
 }
 
-fun add(x: Int, y: Int): Int {
-    return x + y
-}
+fun getAnswer(question: String): String? {
+    var answer: String? = null
 
-// Сокращение однострочной функции
-// fun add(x: Int, y: Int): Int = x + y
+    if (question.length < 10) {
+        answer = "This is your answer"
+    }
+    return answer
+}
