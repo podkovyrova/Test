@@ -1,15 +1,12 @@
 fun main() {
-    var house = Building()
-    println(house.floors)
+    var house1 = Building(6, 20.0,10.0)
+    var house2 = Building(1, 3.0,5.0)
 
+    var house3 = Building()
 
-    var house1 = Building()
+    // Ввод свойств в разном порядке с указанием свойства
+    var house4 = Building(length = 6.5, width = 8.3, floors = 4)
 
-    house1.floors = 3
-    house1.length = 7
-    house1.width = 7
+    println(house3.floors)
 
-    println(house1.floors)
-
-    house1.destroy()
 }
