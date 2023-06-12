@@ -1,3 +1,0 @@
-interface Stoppable {
-    fun stop()
-}
