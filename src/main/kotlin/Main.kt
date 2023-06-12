@@ -1,12 +1,12 @@
 fun main() {
-    var house1 = Building(6, 20.0,10.0)
-    var house2 = Building(1, 3.0,5.0)
+    val bob = Dog("Bob", "Гав-гав")
 
-    var house3 = Building()
+    bob.sleep()
+    bob.makeVoice()
 
-    // Ввод свойств в разном порядке с указанием свойства
-    var house4 = Building(length = 6.5, width = 8.3, floors = 4)
+    val murzik = Cat("Murzik", "Meow!")
 
-    println(house3.floors)
+    murzik.sleep()
+    murzik.makeVoice()
 
 }
