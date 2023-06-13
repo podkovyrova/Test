@@ -1,25 +1,16 @@
+import kotlin.concurrent.fixedRateTimer
+
 fun main() {
-    var age: Int
+    val user1 = User("34655432", "Lock", 25)
+    val user2 = User("34655432", "Lock", 25)
 
-    age = 76
+    println(user1)
+    println(user2)
 
-    if (age >= 21) {
-        if (age > 75) {
-            println("You're old")
-        } else {
-            println("You are more 21")
-        }
-    } else if (age in 20 .. 18 ) {
-        println("You are more 18 and less 21")
-    } else {
-        println("Permission denied")
-    }
+    println(user1 == user2)
 
-    when (age) {
-        18 -> {println("18")}
-        21 -> {println("21")}
-        else -> {println("I Dont Know")}
-    }
+    println(user1.hashCode())
+    println(user2.hashCode())
 
 }
 
