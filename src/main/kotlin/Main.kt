@@ -2,30 +2,39 @@
 //import kotlin.Exception
 
 fun main() {
-//    Exception in thread "main" java.lang.ArithmeticException: / by zero
-    val a = 10
-    val b = 0
+    test()
 
-    try {
-        println(a / b)
-    } catch (e: ArithmeticException) {
-        println("Попытка деления на 0")
-    } catch (e: Exception) {
-        println("This exception is $e")
-    } finally {
-        println("Вызвался finnaly")
-    }
-
-
-//    Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: Index 2 out of bounds for length 2
-//    val a = arrayOf(1, 2)
-//    for (i in 0..5) {
-//        println(a[i])
-//    }
-//    test()
 }
 
-//    Exception in thread "main" java.lang.StackOverflowError
-//fun test() {
-//    test()
+fun test() {
+    val a = 10
+    val b = 2
+
+    val tel = 7987199872
+
+    try {
+         validate(tel)
+    } catch (e: ValidationException) {
+        println(e.message)
+    } catch (e: CharacterCodingException) {
+        println("$e - исключение")
+    } catch (e: ArrayIndexOutOfBoundsException) {
+        println("$e - исключение")
+    }
+
+}
+
+fun validate(tel: Long) {
+    if (tel.toString().length < 11) {
+        throw ValidationException("Ошибка при валидации номера телефона")
+    }
+}
+
+//fun hi() {
+////    throw CharacterCodingException()
 //}
+//
+//fun sendMessage() {
+//    throw ArrayIndexOutOfBoundsException()
+//}
+
