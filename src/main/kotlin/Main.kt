@@ -10,6 +10,10 @@ fun main() {
         println(a / b)
     } catch (e: ArithmeticException) {
         println("Попытка деления на 0")
+    } catch (e: Exception) {
+        println("This exception is $e")
+    } finally {
+        println("Вызвался finnaly")
     }
 
 
