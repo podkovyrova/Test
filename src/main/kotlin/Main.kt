@@ -31,12 +31,15 @@ fun <T> Array<T>.print() {
     }
 }
 
-
 class Dog {
     fun bark() {
         println("Woof!")
     }
 }
+
+//fun Dog.bark() {   Расширенная функция bark() не будет выполняться, так как она в классе уже существует
+//    println("Meow")
+//}
 
 fun Dog.sleep() {
     println("Dog is sleeping")
