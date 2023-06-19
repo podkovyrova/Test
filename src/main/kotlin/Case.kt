@@ -11,4 +11,9 @@ class Case<T, E>(var item: T, var item2: E): Storage<T> {
         this.item = item
     }
 
+    override fun toString(): String {
+        return "Case(item=$item, item2=$item2)"
+    }
+
+
 }

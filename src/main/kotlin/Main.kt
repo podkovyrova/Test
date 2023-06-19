@@ -15,6 +15,11 @@ fun main() {
 //    jeweleryCase.add(Jewerly("Rings"))
 //    println(jeweleryCase.get())
 
-
+    sayHiAndPrint("John")
+    sayHiAndPrint(Money(1000000))
+    sayHiAndPrint(Case(Money(500), "USD"))
 }
 
+fun <T> sayHiAndPrint(item: T) {
+    println("Hi $item")
+}
