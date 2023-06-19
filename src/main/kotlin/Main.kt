@@ -4,10 +4,13 @@ fun main() {
 //
 //    println(b)
 
-    val arr = arrayOf("a", "b", "c")
+//    val arr = arrayOf("a", "b", "c")
+//    arr.swap(1, 2)
+//    arr.print()
 
-    arr.swap(1, 3)
-    arr.print()
+    val dog = Dog()
+    dog.bark()
+    dog.sleep()
 
 }
 
@@ -26,4 +29,15 @@ fun <T> Array<T>.print() {
     for (i in this) {
         println(i)
     }
+}
+
+
+class Dog {
+    fun bark() {
+        println("Woof!")
+    }
+}
+
+fun Dog.sleep() {
+    println("Dog is sleeping")
 }
