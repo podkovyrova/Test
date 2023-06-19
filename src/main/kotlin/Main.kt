@@ -4,7 +4,7 @@ fun main() {
 //
 //    println(b)
 
-    val arr = arrayOf(1, 2, 3, 4, 5)
+    val arr = arrayOf("a", "b", "c")
 
     arr.swap(1, 3)
     arr.print()
@@ -15,14 +15,14 @@ fun String.getThirdLetter(): Char {
     return this[2]
 }
 
-fun Array<Int>.swap(i1: Int, i2: Int) {
+fun <T> Array<T>.swap(i1: Int, i2: Int) {
     val el1 = this[i1]
     val el2 = this[i2]
     this[i1] = el2
     this[i2] = el1
 }
 
-fun Array<Int>.print() {
+fun <T> Array<T>.print() {
     for (i in this) {
         println(i)
     }
