@@ -1,11 +1,14 @@
+
+
 class TV {
     private var channels = arrayOf("BBC", "FOX", "2x2")
     private var currentChannel = channels[0]
     private var type = "AM"
     private var frequency = 200
+    private var channelString= channels.joinToString(", ")
 
-    fun getChannels(): Array<String> {
-        return channels
+    fun getChannels(): String {
+        return channelString
     }
 
     fun setChannels(newChannels: Array<String>) {
